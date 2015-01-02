@@ -1,4 +1,4 @@
-# vcgencmd - Native Python binding for vcgencmd tool
+# vcgencmd - Native Python binding for RaspberryPi vcgencmd command-line tool
 
 ## Summary
 
