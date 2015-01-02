@@ -58,6 +58,7 @@ def measure_temp():
   output = __lookup('measure_temp', [''], '')
   return float(output[output.find('=') + 1:].strip().rstrip('\'C'))
 
+
 __kCodecSrcs = ['h264', 'mpg2', 'wvc1', 'mpg4', 'mjpg', 'wmv9']
 
 def codec_sources():
