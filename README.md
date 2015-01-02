@@ -50,7 +50,7 @@ sudo pip-3.2 uninstall vcgencmd
 
 ## Test/Command-Line
 ```bash
-nic@raspberrypi:~/dev/vcgencmd$ python3 -m vcgencmd
+nic@raspberrypi:/tmp$ python3 -m vcgencmd
 Clock Frequencies (Hz):
   arm       : 700000000
   core      : 250000000
@@ -92,7 +92,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import vcgencmd
 >>> vcgencmd.frequency_sources()
 ['arm', 'core', 'h264', 'isp', 'v3d', 'uart', 'pwm', 'emmc', 'pixel', 'vec', 'hdmi', 'dpi']
->>> vcgencmd.measure_clock('core')
+>>> vcgencmd.measure_clock('arm')
 700000000
 >>> vcgencmd.measure_clock('hdmi')
 163682000
