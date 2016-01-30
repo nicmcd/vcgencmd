@@ -1,0 +1,193 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>vcgencmd</title>
+  <meta name="description" content="Native Python binding for RaspberryPi vcgencmd command-line tool">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">vcgencmd</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Native Python binding for RaspberryPi vcgencmd command-line tool</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/nicmcd/vcgencmd/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/nicmcd/vcgencmd/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/nicmcd/vcgencmd" class="code">View vcgencmd on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="vcgencmd---native-python-binding-for-raspberrypi-vcgencmd-command-line-tool" class="anchor" href="#vcgencmd---native-python-binding-for-raspberrypi-vcgencmd-command-line-tool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>vcgencmd - Native Python binding for RaspberryPi vcgencmd command-line tool</h1>
+
+<h2>
+<a id="summary" class="anchor" href="#summary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Summary</h2>
+
+<p>'vcgencmd' is a command line tool designed by Broadcom used on the Raspberry Pi.
+This Python package is a native binding to that tool. Currently only a portion
+of the 'vcgencmd' command line tool is supported.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<p>vcgencmd is compatible with both Python2.7+ and Python3.x. The raspberry pi I
+have has python 3.2 installed. These instructions will be for that. You can
+substitute the python and pip commands accordingly for other versions.
+The installer requires the <code>setuptools</code> package.</p>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
+
+<p>Pip (Python 3 version):</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install python3-pip</pre></div>
+
+<p>Setuptools (Python 3 version):</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip-3.2 install setuptools</pre></div>
+
+<h3>
+<a id="python-package-manager-pip" class="anchor" href="#python-package-manager-pip" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Python package manager (PIP)</h3>
+
+<p>Install globally:</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip-3.2 install git+https://github.com/nicmcd/vcgencmd.git</pre></div>
+
+<p>Install locally:</p>
+
+<div class="highlight highlight-source-shell"><pre>pip-3.2 install --user git+https://github.com/nicmcd/vcgencmd.git</pre></div>
+
+<h3>
+<a id="source-installation" class="anchor" href="#source-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source installation</h3>
+
+<p>Install globally:</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo python3 setup.py install</pre></div>
+
+<p>Install locally:</p>
+
+<div class="highlight highlight-source-shell"><pre>python3 setup.py install --user</pre></div>
+
+<h2>
+<a id="uninstall" class="anchor" href="#uninstall" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uninstall</h2>
+
+<div class="highlight highlight-source-shell"><pre>sudo pip-3.2 uninstall vcgencmd</pre></div>
+
+<h2>
+<a id="testcommand-line" class="anchor" href="#testcommand-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test/Command-Line</h2>
+
+<div class="highlight highlight-source-shell"><pre>nic@raspberrypi:/tmp$ python3 -m vcgencmd
+Clock Frequencies (Hz):
+  arm       <span class="pl-c1">:</span> 700000000
+  core      <span class="pl-c1">:</span> 250000000
+  h264      <span class="pl-c1">:</span> 250000000
+  isp       <span class="pl-c1">:</span> 250000000
+  v3d       <span class="pl-c1">:</span> 250000000
+  uart      <span class="pl-c1">:</span> 3000000
+  pwm       <span class="pl-c1">:</span> 0
+  emmc      <span class="pl-c1">:</span> 250000000
+  pixel     <span class="pl-c1">:</span> 25200000
+  vec       <span class="pl-c1">:</span> 0
+  hdmi      <span class="pl-c1">:</span> 163683000
+  dpi       <span class="pl-c1">:</span> 0
+Voltages (V):
+  core      <span class="pl-c1">:</span> 1.2
+  sdram_c   <span class="pl-c1">:</span> 1.2
+  sdram_i   <span class="pl-c1">:</span> 1.2
+  sdram_p   <span class="pl-c1">:</span> 1.225
+Temperatures (C):
+            <span class="pl-c1">:</span> 37.9
+Codecs Enabled:
+  h264      <span class="pl-c1">:</span> False
+  mpg2      <span class="pl-c1">:</span> False
+  wvc1      <span class="pl-c1">:</span> False
+  mpg4      <span class="pl-c1">:</span> False
+  mjpg      <span class="pl-c1">:</span> False
+  wmv9      <span class="pl-c1">:</span> False
+Memory Allocation (bytes):
+  arm       <span class="pl-c1">:</span> 469762048
+  gpu       <span class="pl-c1">:</span> 67108864</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-shell"><pre>nic@raspberrypi:/tmp$ python3
+Python 3.2.3 (default, Mar  1 2013, 11:53:50)
+[GCC 4.6.3] on linux2
+Type <span class="pl-s"><span class="pl-pds">"</span>help<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>copyright<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>credits<span class="pl-pds">"</span></span> or <span class="pl-s"><span class="pl-pds">"</span>license<span class="pl-pds">"</span></span> <span class="pl-k">for</span> more information.
+<span class="pl-k">&gt;&gt;&gt;</span> import vcgencmd
+<span class="pl-k">&gt;&gt;&gt;</span> <span class="pl-en">vcgencmd.frequency_sources</span>()
+[<span class="pl-s"><span class="pl-pds">'</span>arm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>core<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>h264<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>isp<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>v3d<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>uart<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pwm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>emmc<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>pixel<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>vec<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>hdmi<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>dpi<span class="pl-pds">'</span></span>]
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.measure_clock(<span class="pl-s"><span class="pl-pds">'</span>arm<span class="pl-pds">'</span></span>)
+700000000
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.measure_clock(<span class="pl-s"><span class="pl-pds">'</span>hdmi<span class="pl-pds">'</span></span>)
+163682000
+<span class="pl-k">&gt;&gt;&gt;</span> <span class="pl-en">vcgencmd.voltage_sources</span>()
+[<span class="pl-s"><span class="pl-pds">'</span>core<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>sdram_c<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>sdram_i<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>sdram_p<span class="pl-pds">'</span></span>]
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.measure_volts(<span class="pl-s"><span class="pl-pds">'</span>core<span class="pl-pds">'</span></span>)
+1.2
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.measure_volts(<span class="pl-s"><span class="pl-pds">'</span>sdram_p<span class="pl-pds">'</span></span>)
+1.225
+<span class="pl-k">&gt;&gt;&gt;</span> <span class="pl-en">vcgencmd.measure_temp</span>()
+38.5
+<span class="pl-k">&gt;&gt;&gt;</span> <span class="pl-en">vcgencmd.codec_sources</span>()
+[<span class="pl-s"><span class="pl-pds">'</span>h264<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>mpg2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>wvc1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>mpg4<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>mjpg<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>wmv9<span class="pl-pds">'</span></span>]
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.codec_enabled(<span class="pl-s"><span class="pl-pds">'</span>mpg4<span class="pl-pds">'</span></span>)
+False
+<span class="pl-k">&gt;&gt;&gt;</span> <span class="pl-en">vcgencmd.memory_sources</span>()
+[<span class="pl-s"><span class="pl-pds">'</span>arm<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>gpu<span class="pl-pds">'</span></span>]
+<span class="pl-k">&gt;&gt;&gt;</span> vcgencmd.get_mem(<span class="pl-s"><span class="pl-pds">'</span>arm<span class="pl-pds">'</span></span>)
+469762048
+<span class="pl-k">&gt;&gt;&gt;</span></pre></div>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/nicmcd" class="avatar"><img src="https://avatars0.githubusercontent.com/u/4087781?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/nicmcd">nicmcd</a> maintains <a href="https://github.com/nicmcd/vcgencmd">vcgencmd</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/nicmcd/vcgencmd/tarball/master" class="tar">tar</a><a href="https://github.com/nicmcd/vcgencmd/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-73117208-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+</body>
+</html>
