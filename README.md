@@ -8,8 +8,7 @@ of the 'vcgencmd' command line tool is supported.
 
 ## Install
 
-vcgencmd is compatible with both Python2.7+ and Python3.x. The raspberry pi I
-have has python 3.2 installed. These instructions will be for that. You can
+vcgencmd is compatible with both Python2.7+ and Python3.x. These instructions will be for Python 3.x. You can
 substitute the python and pip commands accordingly for other versions.
 The installer requires the `setuptools` package.
 
@@ -20,32 +19,32 @@ sudo apt-get install python3-pip
 ```
 Setuptools (Python 3 version):
 ```bash
-sudo pip-3.2 install setuptools
+sudo pip3 install setuptools
 ```
 
 ### Python package manager (PIP)
 Install globally:
 ```bash
-sudo pip-3.2 install git+https://github.com/nicmcd/vcgencmd.git
+sudo pip3 install git+https://github.com/nicmcd/vcgencmd.git
 ```
 Install locally:
 ```bash
-pip-3.2 install --user git+https://github.com/nicmcd/vcgencmd.git
+pip3 install --user git+https://github.com/nicmcd/vcgencmd.git
 ```
 
 ### Source installation
 Install globally:
 ```bash
-sudo python3 setup.py install
+sudo pip3 install -e .
 ```
 Install locally:
 ```bash
-python3 setup.py install --user
+pip3 install -e . --user
 ```
 
 ## Uninstall
 ```bash
-sudo pip-3.2 uninstall vcgencmd
+sudo pip3 uninstall vcgencmd
 ```
 
 ## Test/Command-Line
